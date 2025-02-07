@@ -265,6 +265,10 @@ public class Warp {
     }
 
     public CompletableFuture<Boolean> isDangerous() {
+        if (!CONFIG.getBoolean("check-unsafe-warps", true)) {
+            return CompletableFuture.completedFuture(false);
+        }
+
         return PaperUtils.getChunkAtAsync(location).thenApply((chunk) -> {
             int x = location.getBlockX() & 15;
             int y = location.getBlockY();

@@ -70,6 +70,9 @@ warp-naming:
 # PLAYER_HEAD will default to the owner's skull (note: sometimes it may not load)
 default-material: "PLAYER_HEAD"
 
+# should warp location be checked to see if they are unsafe?
+check-unsafe-warps: true
+
 # how much time do players have to confirm if a warp is unsafe or paid
 confirmation-milliseconds: 10000
 

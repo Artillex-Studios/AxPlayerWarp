@@ -67,10 +67,10 @@ public class RateWarpGui extends GuiFrame {
             AxPlayerWarps.getThreadedQueue().submit(() -> {
                 if (isFavorite) {
                     AxPlayerWarps.getDatabase().removeFromFavorites(player, warp);
-                    MESSAGEUTILS.sendLang(player, "favorite.remove");
+                    MESSAGEUTILS.sendLang(player, "favorite.remove", Map.of("%warp%", warp.getName()));
                 } else {
                     AxPlayerWarps.getDatabase().addToFavorites(player, warp);
-                    MESSAGEUTILS.sendLang(player, "favorite.add");
+                    MESSAGEUTILS.sendLang(player, "favorite.add", Map.of("%warp%", warp.getName()));
                 }
                 Scheduler.get().run(this::open);
             });
